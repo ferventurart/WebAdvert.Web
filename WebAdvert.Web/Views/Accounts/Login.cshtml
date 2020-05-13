@@ -7,11 +7,7 @@
     <div class="row">
         <div class="col-md-4">
             <h4>Login using your email address and password</h4>
-            <h5>
-                <a asp-controller="Accounts" asp-action="Signup">
-                    If you are not member yo can signu up here
-                </a>
-            </h5>
+            <h5 class="alert alert-info">Login using your email address and password</h5>
             <hr />
             <form method="post" asp-controller="Accounts" asp-action="Login">
                 <h4>Create a new account</h4>
@@ -32,11 +28,14 @@
 
                 <div class="form-group">
                     <label asp-for="RememberMe"></label>
-                    <input asp-for="RememberMe"/>
+                    <input asp-for="RememberMe" />
                     @Html.DisplayName("RememberMe")
                 </div>
 
                 <button type="submit" class="btn btn-success">Login</button>
+                <div class="alert alert-info mt-5">
+                    Not a member yet? <a asp-action="Signup" asp-controller="Accounts" class="btn">Click here to Sign Up!</a>
+                </div>
             </form>
         </div>
     </div>
